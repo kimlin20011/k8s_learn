@@ -1,5 +1,18 @@
 # [K8s學習](https://ithelp.ithome.com.tw/articles/10192519)
 
+# DAY 1 hello minikube
+* install virtual box, for mac, allow the privacy in system setting 
+* brew install minikube
+* minikube version
+* minikube start
+## 在minikube上執行hello-minikube app
+* create
+`kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4`
+* Expose it as a Service
+`kubectl expose deployment hello-minikube --port=8080
+* check url
+`minikube service hello-minikube --url`
+
 # Day3 docker
 * 安裝 Docker Engine 
 * 製作檔案資料夾，並新增dockerfile
