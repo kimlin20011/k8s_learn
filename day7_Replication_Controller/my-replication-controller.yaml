@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-replication-controller
+spec:
+  replicas: 3 #數量為3
+  selector:
+    app: hello-pod-v1 # 確保擁有"app=hello-pod-v1"label的Pod
+  template: # 定義pod的資訊
+    metadata:
+      labels: 
+        app: hello-pod-v1
+    spec:
+      containers:
+      - name: my-pod
+        image: kimlin20011/docker_node_test
+        ports:
+        - containerPort: 3000
