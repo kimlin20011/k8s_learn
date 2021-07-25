@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # for kubectl versions >= 1.9.0 use apps/v1 如果kubectl的版本 >= 1.9，則需使用app/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-deployment
+  template:
+    metadata:
+      labels:
+        app: my-deployment
+    spec:
+      containers:
+      - name: my-pod
+        image: kimlin20011/docker_node_test
+        ports:
+        - containerPort: 3000
